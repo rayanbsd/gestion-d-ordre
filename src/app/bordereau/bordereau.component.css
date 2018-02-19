@@ -1,0 +1,15 @@
+select,
+label {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: #656675
+}
+
+.ui-g-12 {
+    height: 10em;
+}
+
+.next,
+#external {
+    text-align: center;
+    border: 1px solid black;
+}

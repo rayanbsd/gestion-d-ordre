@@ -1,0 +1,84 @@
+<div class="clearfix" style="background-color:rgb(62,62,69);">
+    <span class="float-left"><button class="btn"><i class="fa fa-bars"></i>&nbsp; &nbsp; VERMEG</button></span>
+    <div id="rectangle"></div>
+    <span class="icon"><i class="fa fa-search" ></i></span>
+    <input type="search" class="search" placeholder="rechercher par xxx,xxx,xxx">
+    <span class="float-right"><button class="btn">Nom</button></span>
+</div>
+
+
+<div class="main">
+    <div class="container">
+        <br><br><br><br>
+        <div class="card">
+            <div class="card-header" [ngClass]="{'card-header-here':c1}" (click)="click1()">
+                <span class="collapsed card-link" data-toggle="collapse" data-parent="#accordion">
+                    1.Portefeuille
+                </span>
+            </div>
+            <div *ngIf="c1">
+                <div class="card-body">
+                    <app-portefeuille></app-portefeuille>
+                    <br>
+                    <div class="ui-g-12 ui-lg-11 ">
+                        <hr/>
+                        <div class="next"><a (click)="click2()">Suivant</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" [ngClass]="{'card-header-here':c2}" (click)="click2()">
+                <span class="collapsed card-link" data-toggle="collapse" data-parent="#accordion">
+                    2.Bordereau
+                </span>
+            </div>
+            <div *ngIf="c2">
+                <div class="card-body">
+                    <app-bordereau></app-bordereau>
+                    <br>
+                    <div class="ui-g-12 ui-lg-11 ">
+                        <hr/>
+                        <div class="next"><a (click)="click3()">Suivant</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" [ngClass]="{'card-header-here':c3}" (click)="click3()">
+                <div class="collapsed card-link" data-toggle="collapse" data-parent="#accordion">
+                    3.Frais
+                </div>
+            </div>
+            <div *ngIf="c3">
+                <div class="card-body">
+                    <app-frais></app-frais>
+                    <br>
+                    <div class="ui-g-12 ui-lg-11 ">
+                        <hr/>
+                        <div class="next"><a (click)="click4()">Suivant</a></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" [ngClass]="{'card-header-here':c4}" (click)="click4()">
+                <div class="collapsed card-link" data-toggle="collapse" data-parent="#accordion">
+                    4.Zone libre
+                </div>
+            </div>
+            <div *ngIf="c4">
+                <div class="card-body">
+                    <app-zone-libre></app-zone-libre>
+                    <br>
+                    <div class="ui-g-12 ui-lg-11 ">
+                        <hr/>
+                        <div class="next" (click)="click1()">Suivant</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

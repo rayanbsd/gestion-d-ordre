@@ -1,0 +1,12 @@
+.float-left {
+    width: 47%;
+}
+
+.float-right {
+    width: 47%;
+}
+
+p {
+    font-weight: bold;
+    text-decoration: underline;
+}

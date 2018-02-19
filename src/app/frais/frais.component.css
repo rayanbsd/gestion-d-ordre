@@ -1,0 +1,50 @@
+input[type="range"] {
+    width: 70%;
+    height: 10px;
+    /* thumbHeight + (2 x thumbBorderWidth)*/
+    -webkit-appearance: none;
+    /*remove the line*/
+    outline: none;
+    /*background-color:cyan;*/
+    border: 0;
+    /*for firefox on android*/
+    padding: 0 8px;
+    /*for IE*/
+    margin: 8px 0;
+}
+
+input[type="range"]::-moz-focus-outer {
+    border: 0;
+}
+
+input[type="range"]::-moz-range-track {
+    background: rgb(202, 201, 213);
+    /*trackColor*/
+    height: 2px;
+    /*trackHeight*/
+    border-radius: 4px;
+    /*trackHeight*/
+    /*background isn't animatable, so can't use transition*/
+}
+
+input[type="range"]::-moz-range-thumb {
+    background: rgb(63, 62, 69);
+    /*thumbColor*/
+    width: 13px;
+    /*thumbHeight*/
+    height: 13px;
+    /*thumbHeight*/
+    border-radius: 50%;
+    cursor: pointer;
+    border: 4px solid #fff;
+    /*border-width = thumbBorderWidth, border-color should match the background*/
+}
+
+input[type="range"]::-moz-range-progress {
+    background: rgb(63, 62, 69);
+    /*thumbColor*/
+    border-radius: 4px;
+    /*trackHeight*/
+    height: 4px;
+    /*trackHeight*/
+}
