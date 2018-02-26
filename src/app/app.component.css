@@ -7,9 +7,10 @@
 
 .card-header {
     font-size: 25px;
+    cursor: pointer;
 }
 
-.card-header-here {
+.active {
     color: black;
     font-size: 25px;
     font-weight: bold;
@@ -25,6 +26,8 @@
     padding: 10px 16px;
     background: #3e3e45;
     text-decoration: none;
+    width: 40%;
+    float: right
 }
 
 .icon {
@@ -79,7 +82,7 @@
 
 .next:hover {
     color: black;
-    text-decoration: underline;
+    cursor: pointer;
 }
 
 hr {
@@ -89,4 +92,19 @@ hr {
     border-top: 1px solid #ccc;
     margin: 1em 0;
     padding: 0;
+}
+
+.modal-dialog,
+.modal-content {
+    height: 90%;
+}
+
+.choice {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.choice:hover {
+    color: black;
+    cursor: pointer;
 }

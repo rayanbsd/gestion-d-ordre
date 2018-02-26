@@ -8,6 +8,7 @@ import { BordereauComponent } from './bordereau/bordereau.component';
 import { FraisComponent } from './frais/frais.component';
 import { PortefeuilleComponent } from './portefeuille/portefeuille.component';
 import { ZoneLibreComponent } from './zone-libre/zone-libre.component';
+import { ContraintesComponent } from './contraintes/contraintes.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ZoneLibreComponent } from './zone-libre/zone-libre.component';
     BordereauComponent,
     FraisComponent,
     PortefeuilleComponent,
-    ZoneLibreComponent
+    ZoneLibreComponent,
+    ContraintesComponent
   ],
   imports: [
     BrowserModule, FormsModule
