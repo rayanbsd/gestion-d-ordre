@@ -85,31 +85,11 @@
                     <h4 class="modal-title active">Contraintes ()</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">
-                    <p-dataTable class="ui-datatable table" [value]="partners" [rows]="10" [paginator]="true" [pageLinks]="3" [responsive]="true" [stacked]="stacked" [rowsPerPageOptions]="[5,10,20]" (onRowSelect)="onRowSelect($event)" [(selection)]="selectedPartner" resizableColumns="true"
-                        columnResizeMode="expand" reorderableColumns="true" selectionMode="single" [(selection)]="selectedPartner">
-                        <header>Statistique</header>
-                        <p-column field="partner_name" header="Nom Partenaire" [filter]="true" filterPlaceholder="Search" [sortable]="true"></p-column>
-                        <p-column field="url" header="URL" [sortable]="true"></p-column>
-                        <p-column field="max_response_time" header="Réponse Moyenne (ms)" [sortable]="true"></p-column>
-                        <p-column field="partner_id" header="taux de succéess (%)" [sortable]="true"></p-column>
-                        <p-footerColumnGroup>
-                            <p-row>
-                                <p-column footer="Moyenne:" colspan="2"></p-column>
-                                <p-column footer="{{reponseMoyenne}}"></p-column>
-                                <p-column footer="{{tauxMoyenne}}"></p-column>
-                            </p-row>
-                        </p-footerColumnGroup>
-                    </p-dataTable>
-                </div>
-                <br>
-                <div class="modal-footer">
-                    <div class="mr-auto p-1 ">Contraintes à commenter 0/1</div>
-                    <div class="choice"><a> Modifier l'ordre  &nbsp; &nbsp;</a></div>
-                    <div class="choice"><a class="choice">Transgresser</a></div>
-
-                </div>
-
+           
+               
             </div>
         </div>
+
     </div>
+   
+  

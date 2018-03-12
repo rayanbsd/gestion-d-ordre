@@ -1,0 +1,14 @@
+.form-control{
+    width:80%;
+    padding:15px;
+    margin:auto;
+
+}
+.w3-select{
+   
+    font-size: 14px;
+}
+
+tr,td,table{
+    border: 1px solid black;
+}

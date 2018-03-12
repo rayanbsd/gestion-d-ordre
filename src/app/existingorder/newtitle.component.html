@@ -1,0 +1,70 @@
+<div class="main" >
+  <br><br>
+<div class="grid-container">
+  
+  <div class="item1">
+    <button class="button button4" (click)="click1()">Title</button> &nbsp;
+    <button class="button button5" (click)="click2()">Espece</button>
+  
+  </div>
+  
+  <div class="item3">
+      <div *ngIf="c1">
+    <form [formGroup]='stateForm' novalidate  >
+    
+      <div class="pos-relative">
+        <input  id='search' placeholder="Search for a state" formControlName='search'  type='text'  >
+        <div *ngIf="showDropdown" class="state-container-dropdown">
+          <div>
+            <div class="state" *ngFor="let titreModel of titresModel | FilterPipe: getSearchValue() ">
+              {{this.titreModel.name}}&nbsp; {{this.titreModel.label}} &nbsp;{{this.titreModel.identifier}}
+            </div>
+
+          </div>
+          
+         
+        </div>
+      </div>
+      </form>
+</div>
+<div *ngIf="c2">
+    <form [formGroup]='stateForm' novalidate  >
+    
+      <div class="pos-relative">
+        <input  id='search' placeholder="Search for a state" formControlName='search'  type='text'  >
+        <div *ngIf="showDropdown" class="state-container-dropdown">
+          <div>
+            <div class="state" *ngFor="let titreModel of titresModel | FilterPipe2: getSearchValue() ">
+              {{this.titreModel.label}}
+            </div>
+          </div>
+          
+         
+        </div>
+      </div>
+      </form>
+</div>
+
+    
+    
+    <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg ">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title active">Contraintes ()</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button><br><br><br>
+        
+      </div>
+      <app-contraintes></app-contraintes>
+    
+    </div>
+    </div>
+    </div>
+  </div>
+  <div>
+    <br>
+         <nav><a   data-toggle="modal" data-target="#myModal">recherche avance</a></nav> 
+      </div><br>
+      <button  routerLink="/newtitle">Suivant</button> 
+  
+

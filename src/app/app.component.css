@@ -50,7 +50,36 @@
     width: 40%;
     float: right
 }
+.btn2 {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 22px;
+   
+    background: #3e3e45;
+    text-decoration: none;
+    width: 40%;
+    
+}
+.head{
+    background-color:#3e3e45;
+    text-align: center;
+    padding-top: 10px ;
+}
 
 .float-right {
     margin-right: 5%
+}
+nav   {
+    width: 100%;
+    height: 80px;
+    padding: 1px;
+ 
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }

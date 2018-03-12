@@ -1,8 +1,15 @@
 <div class="clearfix">
-    <span class="float-left"><button class="btn"><i class="fa fa-bars"></i>&nbsp; &nbsp; VERMEG</button></span>
+    <span class="float-left"><button class="btn" routerLink="neworder"><i class="fa fa-bars"></i>&nbsp; &nbsp; VERMEG</button></span>
     <div id="rectangle"></div>
     <span class="icon"><i class="fa fa-search" ></i></span>
     <input type="search" class="search" placeholder="rechercher par xxx,xxx,xxx">
     <span class="float-right"><button class="btn">Nom</button></span>
 </div>
-<app-title></app-title>
+
+<div class="head" >
+    <button class="btn2" routerLink="/existingorder">existing Order</button>
+    <button class ="btn2" routerLink="/neworder">new Order</button>
+</div>
+<router-outlet></router-outlet>
+
+ 
