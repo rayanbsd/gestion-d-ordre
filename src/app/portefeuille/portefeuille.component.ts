@@ -92,7 +92,7 @@ export class PortefeuilleComponent implements OnInit {
     prime[prop] = c[prop];
   }
   return prime;
-} 
+}
 clonePortfolio(c: Portfeuille): Portfeuille {
   let prime = new PrimePortfeuille();
   for(const prop in c) {

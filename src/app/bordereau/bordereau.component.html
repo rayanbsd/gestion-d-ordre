@@ -1,124 +1,120 @@
-<table witdh="100%" cellpadding="20">
+<table witdh="100%"  cellspacing="0" >
+
+  
     <tr>
-        <td rowspan="9" style="width:5%"></td>
-    </tr>
-    <tr>
-        <td> <label>Sens de l'ordre</label>
-            <select class="w3-select" name="option">
-      <option value="" disabled selected></option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select></td>
+        <td ><label class="none" >Order date:</label></td>
+        <td><input type="date" class="w3-input"></td>
+        <td><input type="text" class="w3-input"></td>
         <td style="width:2%"></td>
-        <td> <label>Quantité</label>
-            <select class="w3-select" name="option">
-        <option value="" disabled selected></option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select></td>
-        <td rowspan="8" style="width:8%"></td>
-        <td colspan="3" rowspan="4" id="external">ADD EXTERNAL INFORMATION</td>
-        <td rowspan="9" style="width:5%"></td>
-    </tr>
-
-    <tr>
-        <td colspan="3"><label> Place</label>
-            <input class="w3-input" type="text">
-        </td>
-
+        <td><label >Security:</label></td>
+        <td><input type="text" class="w3-input" disabled></td>
+        <td><input type="text" class="w3-input"disabled></td>
     </tr>
     <tr>
-        <td><label> Date de l'opération</label>
-            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+            <td><label  class="none"> Value date:</label></td>
+            <td><input type="date" class="w3-input"></td>
+            <td><input type="text" class="w3-input"></td>
+            <td style="width:5%"></td>
+            <td><label (click)="showdialog2(0)">broker:</label></td>
+            <td><input type="text" class="w3-input" [(ngModel)]="element[0].mnemonic"></td>
+            <td><input type="text" class="w3-input" [(ngModel)]="element[0].name" ></td>
+        </tr>
+        <tr>
+                <td><label (click)="showdialog(0)">Operation type:</label></td>
+                <td><input type="text" class="w3-input" [(ngModel)]="operation[0].externalcode" ></td>
+                <td><input type="text" class="w3-input" [(ngModel)]="operation[0].label"></td>
+                <td style="width:5%"></td>
+                <td><label (click)="showdialog2(1)">Custodian:</label></td>
+                <td><input type="text" class="w3-input" [(ngModel)]="element[1].mnemonic" ></td>
+                <td><input type="text" class="w3-input" [(ngModel)]="element[1].name" ></td>
+            </tr>
+            <tr>
+                    <td><label (click)="showdialog(1)">Market:</label></td>
+                    <td><input type="text" class="w3-input" [(ngModel)]="operation[1].externalcode"></td>
+                    <td><input type="text" class="w3-input"  [(ngModel)]="operation[1].label"></td>
+                    <td style="width:5%"></td>
+                    <td><label (click)="showdialog2(2)">Counterpart:</label></td>
+                    <td><input type="text" class="w3-input"  [(ngModel)]="element[2].mnemonic" ></td>
+                    <td><input type="text" class="w3-input" [(ngModel)]="element[2].name"></td>
+                </tr>
 
-            <input class="w3-input" type="date"></td>
-        <td style="width:2%"></td>
-        <td><label> Date de l'expiration</label>
-            <i class="fa fa-calendar-o" aria-hidden="true"></i>
-
-            <input class="w3-input" type="date"></td>
-    </tr>
-    <tr>
-        <td><label>Type d'ordre</label>
-            <select class="w3-select" name="option">
-          <option value="" disabled selected></option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select></td>
-        <td></td>
-        <td><label>Cours limite</label>
-            <select class="w3-select" name="option">
-          <option value="" disabled selected></option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select></td>
-    </tr>
-    <tr>
-        <td><label>Prix</label>
-            <select class="w3-select" name="option">
-          <option value="" disabled selected></option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select></td>
-        <td style="width:2%"></td>
-        <td><label>Devise</label>
-            <select class="w3-select" name="option">
-          <option value="" disabled selected></option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select></td>
-        <td><label>Courtier</label>
-            <select class="w3-select" name="option">
-          <option value="" disabled selected></option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select></td>
-        <td style="width:2%"></td>
-        <td><label>Media</label>
-            <select class="w3-select" name="option">
-          <option value="" disabled selected></option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select></td>
-    </tr>
-    <tr>
-        <td colspan="3"><label> Donneur d'ordre </label>
-            <input class="w3-input" type="text">
-        </td>
-        <td><label>Ordre a soigner</label>
-            <select class="w3-select" name="option">
-          <option value="" disabled selected></option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select></td>
-        <td style="width:2%"></td>
-        <td><label>Status</label>
-            <select class="w3-select" name="option">
-          <option value="" disabled selected></option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select></td>
-
-    </tr>
-    <tr>
-        <td colspan="3"><label> Contrepartie</label>
-            <input class="w3-input" type="text"></td>
-        <td colspan="3" rowspan="2"> <textarea name="paragraph_text" cols="50" rows="10" placeholder="Ecrire votre commentaire ici ..."></textarea></td>
-    </tr>
-    <tr>
-        <td colspan="3"><label> Dépositaire </label>
-            <input class="w3-input" type="text"></td>
-
-    </tr>
-
+                <tr>
+                        <td><label class="none">Price:</label></td>
+                        <td><input type="text" class="w3-input"></td>
+                        <td>
+                            <select class="w3-select" name="option">
+                              <option value="" disabled selected></option>
+                              <option value="1">EURO</option>
+                              <option value="2">DOLLAR</option>
+                              <option value="3">DINAR</option>
+                            </select></td>
+                        <td style="width:5%"></td>
+                        <td><label (click)="showdialog(2)">media:</label></td>
+                        <td><input type="text" class="w3-input" [(ngModel)]="operation[2].externalcode"></td>
+                        <td><input type="text" class="w3-input" [(ngModel)]="operation[2].label"></td>
+                    </tr>                   
+                    <tr>
+                            <td><label (click)="showdialog(3)">Status:</label></td>
+                            <td><input type="text" class="w3-input"  [(ngModel)]="operation[3].externalcode"></td>
+                            <td><input type="text" class="w3-input"  [(ngModel)]="operation[3].label"></td>
+                            
+                        </tr> 
 </table>
+<p-dialog header="operationtype" [(visible)]="displayoperationtype">
+                <div *ngIf="tableoperation">
+                        <p-dataTable selectionMode="single" [(selection)]="selectedoperation" class="ui-datatable table" [value]="operationtypes" [rows]="10" [pageLinks]="3" [stacked]="stacked" [rowsPerPageOptions]="[5,10,20]" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" selectionMode="single">
+                    <p-column field="externalcode" header="externalcode" [sortable]="true" [filter]="true" filterPlaceholder="Search"></p-column>
+                    <p-column field="label" header="label" [sortable]="true" [filter]="true" filterPlaceholder="Search"></p-column>
+                    
+                </p-dataTable>
+                    <div class="search"(click)="recherchavanceroperation()">Advanced Search</div>
+                    <div class="choice"><i class="fa fa-check"(click)="valideroperation()"></i> &nbsp;
+                        <i class="fa fa-times" (click)="hidedialog()"></i> </div>
+                </div>
+                <div *ngIf="advancedsearchoperation">
+                    <table>
+                            <tr>
+                                    <td style="width:30%"><label>external code</label></td>
+                                    <td><input class="inline" type="text" [(ngModel)]="operationtypessearch.externalcode"></td>
+                                </tr>
+                                <tr>
+                                    <td style="width:30%"><label>label</label></td>
+                                    <td><input class="inline" type="text" [(ngModel)]="operationtypessearch.label"></td>
+                                </tr><br>
+                    </table>
+                    <div class="search" (click)="resultatoperation()">Result </div> 
+                </div>      
+</p-dialog>
+<p-dialog header="element" [(visible)]="displayelement">
+        <div *ngIf="tableelement">
+                <p-dataTable selectionMode="single" [(selection)]="selectedelement" class="ui-datatable table" [value]="elementtypes" [rows]="10" [pageLinks]="3" [stacked]="stacked" [rowsPerPageOptions]="[5,10,20]" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" selectionMode="single">
+            <p-column field="mnemonic" header="mnemonic" [sortable]="true" [filter]="true" filterPlaceholder="Search"></p-column>
+            <p-column field="name" header="name" [sortable]="true" [filter]="true" filterPlaceholder="Search"></p-column>
+            
+        </p-dataTable>
+            <div class="search " (click)="recherchavancerelement()">Advanced Search</div>
+      
+            <div class="choice"><i class="fa fa-check"(click)="validerelement()"></i> &nbsp;
+                <i class="fa fa-times" (click)="hidedialog2()"></i> </div>
+        </div>
+        <div *ngIf="advancedsearchelement">
+            <table>
+                    <tr>
+                            <td style="width:30%"><label >mnemonic</label></td>
+                            <td><input class="inline" type="text" [(ngModel)]="elementtypesearch.mnemonic"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:30%"><label >name</label></td>
+                            <td><input class="inline" type="text" [(ngModel)]="elementtypesearch.name"></td>
+                        </tr><br>
+            </table>
+            <div class="search" (click)="resultatelement()">resultat </div> 
+        </div>      
+</p-dialog>
+
+
+
+
+
+
+

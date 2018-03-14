@@ -9,6 +9,16 @@ export class ZoneLibreComponent implements OnInit {
 
   constructor() { }
 
+ 
+
+    display: boolean = false;
+
+    showDialog() {
+        this.display = true;
+    }
+
+
+
   ngOnInit() {
   }
 
