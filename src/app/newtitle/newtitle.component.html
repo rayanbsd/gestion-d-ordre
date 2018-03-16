@@ -1,61 +1,60 @@
-
 <div class="main">
-  <div class="container">
-      <br><br><br><br>
-      <div class="card">
-          <div class="card-header" [ngClass]="{'active':c1}" (click)="click1()">
-              <span class="collapsed card-link" data-toggle="collapse" data-parent="#accordion">
-                1.Portefeuille
+    <div class="container">
+        <br><br><br><br>
+        <div class="card">
+            <div class="card-header" [ngClass]="{'active':c1}" (click)="click1()">
+                <span class="collapsed card-link" data-toggle="collapse" data-parent="#accordion">
+                1.Portfolio
             </span>
-          </div>
-          <div *ngIf="c1" class="collapse show">
-              <div class="card-body">
-                  <app-portefeuille></app-portefeuille>
-                  <br>
-                  <div class="ui-g-12 ui-lg-11 ">
-                      <hr/>
-                      <div class="next"><a (click)="click2()">Suivant</a></div>
-                  </div>
-              </div>
-          </div>
-      </div>
+            </div>
+            <div *ngIf="c1" class="collapse show">
+                <div class="card-body">
+                    <app-portfolio></app-portfolio>
+                    <br>
+                    <div class="ui-g-12 ui-lg-11 ">
+                        <hr/>
+                        <div class="next"><a (click)="click2()">Suivant</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-      <div class="card">
-          <div class="card-header" [ngClass]="{'active':c2}" (click)="click2()">
-              <div class="collapsed card-link" data-toggle="collapse" data-parent="#accordion">
-                  2.Zone libre
-              </div>
-          </div>
-          <div *ngIf="c2">
-              <div class="card-body">
-                  <app-zone-libre></app-zone-libre>
-                  <br>
-                  <div class="ui-g-12 ui-lg-11 ">
-                      <hr/>
-                  </div>
-              </div>
-          </div>
-          <br>
-          <div>
-              <br> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        <div class="card">
+            <div class="card-header" [ngClass]="{'active':c2}" (click)="click2()">
+                <div class="collapsed card-link" data-toggle="collapse" data-parent="#accordion">
+                    2.Note
+
+                </div>
+            </div>
+            <div *ngIf="c2">
+                <div class="card-body">
+                    <app-note></app-note>
+                    <br>
+                    <div class="ui-g-12 ui-lg-11 ">
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <br> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                   Envoyer
             </button></div><br>
 
-      </div>
-  </div>
+        </div>
+    </div>
 
-  <div class="modal fade" id="myModal">
-      <div class="modal-dialog modal-lg ">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h4 class="modal-title active">Contraintes ()</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-         
-             
-          </div>
-      </div>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title active">Contraintes ()</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
 
-  </div>
- 
+
+            </div>
+        </div>
+
+    </div>

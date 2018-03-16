@@ -2,7 +2,6 @@ select,
 label {
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     color: #656675
-    
 }
 
 .ui-g-12 {
@@ -14,21 +13,20 @@ label {
     text-align: center;
     border: 1px solid black;
 }
-table{
-    border-collapse:separate;
-    border-spacing:0 30px;
-   
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 30px;
 }
-label:hover{
-    color:black;
-    text-decoration: underline;
+
+td {
+    padding: 1%;
 }
-td{
-    padding:1%;
+
+.none:hover {
+    text-decoration: unset;
 }
-.none:hover{
-    text-decoration:unset;
-}
+
 .search {
     font-weight: bold;
     color: #A3A3A3;
@@ -37,14 +35,16 @@ td{
     font-family: arial, helvetica, sans-serif;
     text-align: left;
 }
+
 .search:hover {
     color: black;
     cursor: pointer;
 }
+
 .choice {
     font-size: 25px;
     font-weight: bold;
-    text-align:right;
+    text-align: right;
 }
 
 .choice:hover {
@@ -52,4 +52,18 @@ td{
     cursor: pointer;
 }
 
+.inp .standardinp {
+    color: #A3A3A3;
+    font-family: arial, helvetica, sans-serif;
+    text-decoration: none;
+}
 
+.inp:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.fa-exclamation {
+    color: red;
+    font-size: 20px;
+}

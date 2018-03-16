@@ -1,4 +1,4 @@
-export interface Portfeuille {
+export interface Portfolio {
     account_class?;
     entity?;
     account_number?;

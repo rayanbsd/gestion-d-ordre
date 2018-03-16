@@ -1,35 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { Portfeuille } from './portefeuille';
-import { Portfeuilleafter } from './portfeuilleafter';
-import { ViewEncapsulation } from '@angular/core';
-import {DataTableModule, SharedModule, ButtonModule, DialogModule, GrowlModule, TabViewModule, AccordionModule, DropdownModule,
-  SliderModule, SpinnerModule, SlideMenuModule, ListboxModule, ChartModule, FieldsetModule} from 'primeng/primeng';
+import { Component, OnInit, ViewEncapsulation , HostListener } from '@angular/core';
+import { Portfolio } from './portfolio';
+import { Portfolioafter } from './portfolioafter';
 @Component({
-  selector: 'app-portefeuille',
-  templateUrl: './portefeuille.component.html',
-  styleUrls: ['./portefeuille.component.css'],
+  selector: 'app-portfolio',
+  templateUrl: './portfolio.component.html',
+  styleUrls: ['./portfolio.component.css'],
   encapsulation : ViewEncapsulation.None
 
 })
-export class PortefeuilleComponent implements OnInit {
+export class PortfolioComponent implements OnInit {
   dialog: boolean;
   table: boolean;
-  advanced = false;
-  tmpPortfolio: Portfeuille ;
-  portfolioSearch: Portfeuille = {'account_class' : '' , 'entity' : '' , 'account_number' : '' , 'account_label' : ''};
-  newElement: Portfeuilleafter = { 'avaiable_quantity_without_blocked': '', 'blocked_quantity': '', 'currency': '',
+  tmpPortfolio: Portfolio ;
+  portfolioSearch: Portfolio = {'account_class' : '' , 'entity' : '' , 'account_number' : '' , 'account_label' : ''};
+  newElement: Portfolioafter = { 'avaiable_quantity_without_blocked': '', 'blocked_quantity': '', 'currency': '',
    'brokerage' : '', 'pourcentage_brokerage': '', 'held_quantity': 0 , 'quantity' : '', 'portfolio_number' : '',
    'portfolio_label': '' , 'clean_value' : '' , 'mirror_account' : '' , 'bank_account' : ''};
-  tmpPortfolioafter: Portfeuilleafter[];
-  originalportfolio: Portfeuille[] = [
+  tmpPortfolioafter: Portfolioafter[];
+  originalportfolio: Portfolio[] = [
   {'account_class' : 'portfolio class' , 'entity' : '003' , 'account_number' : '013' , 'account_label' : '013'},
   {'account_class' : 'portfolio class' , 'entity' : '003' , 'account_number' : '012' , 'account_label' : '012'}
   ];
-  portfolio: Portfeuille[];
-  portfolioafter: Portfeuilleafter[] = [ {'avaiable_quantity_without_blocked': 0, 'blocked_quantity': 0, 'currency': '',
+  portfolio: Portfolio[];
+  portfolioafter: Portfolioafter[] = [ {'avaiable_quantity_without_blocked': 0, 'blocked_quantity': 0, 'currency': '',
   'brokerage': 0 , 'pourcentage_brokerage': '', 'held_quantity': 0 , 'quantity' : 0, 'portfolio_number' : '',
   'portfolio_label': '' , 'clean_value' : 0, 'mirror_account' : '' , 'bank_account' : ''}];
-  cloned: Portfeuilleafter;
+  cloned: Portfolioafter;
 
   constructor() { }
 
@@ -37,7 +33,6 @@ export class PortefeuilleComponent implements OnInit {
   }
   showdialog() {
   this.table = true;
-  this.advanced = false;
   this.portfolio = this.originalportfolio;
   this.dialog = true;
   }
@@ -53,7 +48,6 @@ export class PortefeuilleComponent implements OnInit {
   }
   advancedsearch() {
   this.table = false;
-  this.advanced = true;
   }
   tableshow() {
     this.portfolio = this.originalportfolio.slice(0);
@@ -72,7 +66,6 @@ export class PortefeuilleComponent implements OnInit {
     i++;
     }
     this.table = true;
-    this.advanced = false;
   }
   delete() {
     let i: number;
@@ -86,24 +79,19 @@ export class PortefeuilleComponent implements OnInit {
       i++;
    }
   }
-  clonePortfoliofter(c: Portfeuilleafter): Portfeuilleafter {
-  const prime = new PrimePortfeuilleafter();
+  clonePortfoliofter(c: Portfolioafter): Portfolioafter {
+  const prime = new PrimePortfolioafter();
   for(const prop in c) {
     prime[prop] = c[prop];
   }
   return prime;
 }
-clonePortfolio(c: Portfeuille): Portfeuille {
-  let prime = new PrimePortfeuille();
+clonePortfolio(c: Portfolio): Portfolio {
+  let prime = new PrimePortfolio();
   for(const prop in c) {
     prime[prop] = c[prop];
   }
   return prime;
-}
-onRowSelect(event) {
-  if (this.portfolioafter.indexOf(event.data) === 0) {
-    event.data.isEditable = false;
-  }
 }
 calculate() {
 this.portfolioafter[0].quantity = 0;
@@ -114,11 +102,28 @@ while (i < this.portfolioafter.length) {
   i++;
 }
 }
+rowStyle(rowData, rowIndex) {
+  if (rowIndex === 0) {
+    return('firstrow');
+  }
 }
-class PrimePortfeuilleafter implements Portfeuilleafter {
+@HostListener('document:keypress  ', ['$event'])
+handleKeyboardEvent(event: KeyboardEvent) {
+  if (event.keyCode === 13) {
+    if (this.dialog) {
+      if (!this.table) {
+        this.tableshow ();
+      } else if (this.tmpPortfolio != null) {
+        this.validatedialog();
+      }
+    }
+  }
+}
+}
+class PrimePortfolioafter implements Portfolioafter {
   constructor(public brokerage?, public held_quantity?, public quantity?, public portfolio_number?, public portfolio_label?,
   public clean_value?, public mirror_account?, public bank_account?) {}
 }
-class PrimePortfeuille implements Portfeuille {
+class PrimePortfolio implements Portfolio {
   constructor(public account_class?, public entity?, public account_number?, public account_label?) {}
 }

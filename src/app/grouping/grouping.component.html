@@ -1,0 +1,44 @@
+<table cellpadding="20">
+    <tr *ngFor="let label of labels; let i = index">
+
+        <td class="tdlabel">
+            <div class="inp">
+                <i *ngIf="exclamation[i]" class="fa fa-exclamation"></i>&nbsp;&nbsp;&nbsp;
+                <a (click)="showdialog(i)">{{label}}</a>
+            </div>
+        </td>
+        <td>
+            <input (change)="wrong(i)" class="w3-input" type="text" [(ngModel)]="inputs[i]">
+        </td>
+        <td>
+            <input class="w3-input" type="text" [(ngModel)]="validinputs[i]" disabled>
+        </td>
+    </tr>
+</table>
+<p-dialog styleClass="customDialog" header="RV{{j+1}}" [(visible)]="dialog" [responsive]="true" showEffect="fade" [modal]="true" modal="true" resizable="true" appendToBody="true" widgetVar="ex">
+    <p-dataTable *ngIf="table" class="ui-datatable table" [value]="Rv" [rows]="10" [pageLinks]="3" [stacked]="stacked" [rowsPerPageOptions]="[5,10,20]" resizableColumns="true" columnResizeMode="expand" reorderableColumns="true" selectionMode="single" [(selection)]="tmpRv">
+        <p-column field="external_code" header="external_code" [sortable]="true" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="label" header="label" [sortable]="true" [filter]="true" filterPlaceholder="Search"></p-column>
+    </p-dataTable>
+    <div *ngIf="advanced">
+        <table class="table2">
+            <tr>
+                <td><label>external_code</label></td>
+                <td><input class="inline" type="text" [(ngModel)]="rvSearch.external_code"></td>
+            </tr><br>
+            <tr>
+                <td><label>label</label></td>
+                <td><input class="inline" type="text" [(ngModel)]="rvSearch.label"></td>
+            </tr>
+        </table>
+    </div>
+    <p-footer>
+        <br>
+        <div class="line">
+            <div *ngIf="table" class="search " (click)="advancedsearch()">Recherche avancée</div>
+            <div *ngIf="advanced" class="search " (click)="tableshow()">Resultats</div>
+            <div class="choice"><i class="fa fa-check" (click)="validatedialog()"></i> &nbsp;
+                <i class="fa fa-times" (click)="hidedialog()"></i> </div>
+        </div>
+    </p-footer>
+</p-dialog>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ZoneLibreComponent } from './zone-libre.component';
+import { GroupingComponent } from './grouping.component';
 
-describe('ZoneLibreComponent', () => {
-  let component: ZoneLibreComponent;
-  let fixture: ComponentFixture<ZoneLibreComponent>;
+describe('FraisComponent', () => {
+  let component: GroupingComponent;
+  let fixture: ComponentFixture<GroupingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ZoneLibreComponent ]
+      declarations: [ GroupingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ZoneLibreComponent);
+    fixture = TestBed.createComponent(GroupingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

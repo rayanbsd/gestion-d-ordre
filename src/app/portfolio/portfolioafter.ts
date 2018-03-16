@@ -1,4 +1,4 @@
-export interface Portfeuilleafter {
+export interface Portfolioafter {
     avaiable_quantity_without_blocked?;
     blocked_quantity?;
     currency?;

@@ -1,0 +1,51 @@
+
+<div class="main">
+    <br><br>
+  <div class="grid-container">  
+   <div>
+     <table>
+  <tr>
+    <td><label>Name</label></td><td style="width:5%"></td>
+   <td><input  type="text" class="w3-input" [(ngModel)]="operation[0].name"></td>
+  </tr> 
+  <br>
+  <tr>
+    <td><label>Label </label></td><td style="width:5%"></td>
+    <td> <input type="text" class="w3-input" [(ngModel)]="operation[0].label"></td>
+  </tr>
+  </table>
+  </div>
+    <div>
+      <br>
+         <nav><a class="search"  data-toggle="modal" data-target="#myModal" (click)="showdialog(0)">Advanced Search</a></nav>     
+          </div><br>
+    <button  routerLink="/newtitle" class="btn btn-primary">Suivant</button>
+  </div> 
+  <div> 
+  </div>
+  <p-dialog header="Title" [(visible)]="displayoperationtype">
+      <div *ngIf="tableoperation">
+          <p-dataTable selectionMode="single" [(selection)]="selectedoperation" class="ui-datatable table" [value]="operationtypes" [rows]="10" [pageLinks]="3" [stacked]="stacked" [rowsPerPageOptions]="[5,10,20]" resizableColumns="true" columnResizeMode="expand"
+              reorderableColumns="true" selectionMode="single">
+              <p-column  field="name" header="name" [sortable]="true" [filter]="true" filterPlaceholder="Search"></p-column>
+              <p-column field="label" header="label" [sortable]="true" [filter]="true" filterPlaceholder="Search"></p-column>
+    
+          </p-dataTable>
+          <div class="search" (click)="operationAdvancedSearch()">Advanced Search</div>
+          <div class="choice"><i class="fa fa-check" (click)="validateoperation()"></i> &nbsp;
+              <i class="fa fa-times" (click)="hidedialog()"></i> </div>
+      </div>
+      <div *ngIf="!tableoperation">
+          <table>
+              <tr>
+                  <td style="width:30%"><label>external code</label></td>
+                  <td><input class="inline" type="text" [(ngModel)]="operationtypessearch.name"></td>
+              </tr>
+              <tr>
+                  <td style="width:30%"><label>label</label></td>
+                  <td><input class="inline" type="text" [(ngModel)]="operationtypessearch.label"></td>
+              </tr><br>
+          </table>
+          <div class="search" (click)="resultatoperation()">Result </div>
+      </div>
+    </p-dialog>

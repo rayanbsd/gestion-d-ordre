@@ -1,78 +1,52 @@
 
 <div class="main">
   <br><br>
-<div class="grid-container">
-  
-  <div class="item1">
-    <button class="button button4" (click)="click1()"> External code</button> &nbsp;
-    <button class="button button5" (click)="click2()"> label</button>
-  
-  </div>
-  
-  <div class="item3">
-      <div *ngIf="c1">
-    <form [formGroup]='stateForm' novalidate  >
-    
-      <div class="pos-relative">
-        <input  id='search' placeholder="Search for a state" formControlName='search'  type='text'  >
-        <div *ngIf="showDropdown" class="state-container-dropdown">
-          <div>
-            <div class="state" *ngFor="let newModel of newModels | FilterPipe3: getSearchValue() ">
-              {{this.newModel.externalcode}}
-            </div>
-
-          </div>
-          
-         
-        </div>
-      </div>
-      </form>
+<div class="grid-container">  
+ <div>
+   <table>
+<tr>
+  <td> <label>External code</label></td><td style="width:5%"></td>
+ <td><input  type="text" class="w3-input" [(ngModel)]="operation[0].externalcode"></td>
+</tr> 
+<br>
+<tr>
+  <td><label>Label </label></td><td style="width:5%"></td>
+  <td> <input type="text" class="w3-input" [(ngModel)]="operation[0].label"></td>
+</tr>
+</table>
 </div>
-<div *ngIf="c2">
-    <form [formGroup]='stateForm' novalidate  >
-    
-      <div class="pos-relative">
-        <input  id='search' placeholder="Search for a state" formControlName='search'  type='text'  >
-        <div *ngIf="showDropdown" class="state-container-dropdown">
-          <div>
-            <div class="state" *ngFor="let newModel of newModels | FilterPipe4: getSearchValue() ">
-              {{this.newModel.label}}
-            </div>
-          </div>
-          
-         
-        </div>
-      </div>
-      </form>
-</div>
-
-    
-    
-    <div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-lg ">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h4 class="modal-title active">Contraintes ()</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button><br><br><br>
-        
-      </div>
-      <app-contraintes></app-contraintes>
-    
-    </div>
-    </div>
-    </div>
-  </div>
   <div>
     <br>
-         <nav><a   data-toggle="modal" data-target="#myModal">recherche avance</a></nav> 
-  </div><br>
-
-  <button  routerLink="/title">Suivant</button>
+         <nav><a  class="search" data-toggle="modal" data-target="#myModal" (click)="showdialog(0)">Advanced Search</a></nav> 
+         
+        </div><br>
+  <button  routerLink="/title" class="btn btn-primary">Suivant</button>
 </div>
-
 <div>
- 
- 
 </div>
-
-
+<p-dialog header="New Title" [(visible)]="displayoperationtype">
+    <div *ngIf="tableoperation">
+        <p-dataTable selectionMode="single" [(selection)]="selectedoperation" class="ui-datatable table" [value]="operationtypes" [rows]="10" [pageLinks]="3" [stacked]="stacked" [rowsPerPageOptions]="[5,10,20]" resizableColumns="true" columnResizeMode="expand"
+            reorderableColumns="true" selectionMode="single">
+            <p-column field="externalcode" header="externalcode" [sortable]="true" [filter]="true" filterPlaceholder="Search"></p-column>
+            <p-column field="label" header="label" [sortable]="true" [filter]="true" filterPlaceholder="Search"></p-column>
+  
+        </p-dataTable>
+        <div class="search" (click)="operationAdvancedSearch()">Advanced Search</div>
+        <div class="choice"><i class="fa fa-check" (click)="validateoperation()"></i> &nbsp;
+            <i class="fa fa-times" (click)="hidedialog()"></i> </div>
+    </div>
+    <div *ngIf="!tableoperation">
+        <table>
+            <tr>
+                <td style="width:30%"><label>external code</label></td>
+                <td><input class="inline" type="text" [(ngModel)]="operationtypessearch.externalcode"></td>
+            </tr>
+            <tr>
+                <td style="width:30%"><label>label</label></td>
+                <td><input class="inline" type="text" [(ngModel)]="operationtypessearch.label"></td>
+            </tr><br>
+        </table>
+        <div class="search" (click)="resultatoperation()">Result </div>
+    </div>
+  </p-dialog>

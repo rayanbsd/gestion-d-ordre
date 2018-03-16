@@ -13,7 +13,6 @@
 }
 
 
-
 .choice {
     font-size: 25px;
     font-weight: bold;
@@ -39,11 +38,11 @@
 
 .ui-dialog {
     width: 800px;
-    max-height: 650px;
-    height: 500px;
+    max-height: 850px;
+    height: 400px;
 }
 
-.fa-check {
+.choice .fa-check {
     font-size: 30px;
     color: green;
 }
@@ -80,4 +79,23 @@
 
 .table2 td {
     padding: 0 25px;
+}
+
+.ui-chkbox-box {
+    background-color: grey;
+}
+
+.firstrow {
+    background-color: CadetBlue;
+}
+
+.firstrow .ui-selection-column .ui-chkbox {
+    display: none;
+}
+
+.portfolioaftertable input[type="text"] {
+    background: transparent;
+    border: none;
+    text-align: center;
+    width: 70px;
 }

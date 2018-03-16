@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BordereauComponent } from './bordereau.component';
+import { PaymentScheduleComponent } from './payment-schedule.component';
 
-describe('BordereauComponent', () => {
-  let component: BordereauComponent;
-  let fixture: ComponentFixture<BordereauComponent>;
+describe('PaymentScheduleComponent', () => {
+  let component: PaymentScheduleComponent;
+  let fixture: ComponentFixture<PaymentScheduleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BordereauComponent ]
+      declarations: [ PaymentScheduleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BordereauComponent);
+    fixture = TestBed.createComponent(PaymentScheduleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

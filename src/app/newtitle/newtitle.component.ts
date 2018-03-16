@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-newtitle',
   templateUrl: './newtitle.component.html',
@@ -8,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 export class NewtitleComponent implements OnInit {
   c1 = true;
   c2 = false;
- 
   click1() {
     this.c1 = !this.c1;
     this.c2 = false;

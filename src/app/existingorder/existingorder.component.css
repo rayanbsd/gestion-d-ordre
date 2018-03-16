@@ -2,6 +2,7 @@
   display: grid;
   justify-content: space-evenly;
   grid-template-columns:  580px   ;
+ 
   grid-gap: 20px;
   background-color: white;
   padding: 15px;
